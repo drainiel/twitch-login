@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from '../../components/button';
 
 export default function index() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
+      <View style={styles.iconContainer}>
+        <Ionicons name="logo-twitch" size={100} color="black" />
+      </View>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>
           There's something {"\n"}
@@ -15,10 +18,10 @@ export default function index() {
       
       <View style={styles.buttonsContainer}>
         <Button variant="primary"
-        onPress={() => console.log('Pressed Login')}>
+        onPress={() => router.push('/(tabs)/home')}>
           Log in</Button>
         <Button variant="secondary"
-        onPress={() => console.log('Pressed Sign Up')}>
+        onPress={() => router.push('/(tabs)/home')}>
           Sign Up</Button>
       </View>
     </View>
@@ -32,6 +35,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 40,
+  },
+  iconContainer: {
+    top: 170,
+    alignItems: 'center',
   },
   headerContainer: {
     flex: 1,
@@ -49,6 +56,9 @@ const styles = StyleSheet.create({
     fontWeight: '900',
   },
   buttonsContainer: {
+    flexDirection: 'row',
     marginBottom: 20,
+    justifyContent: 'center',
+    gap: 20,
   },
 });
