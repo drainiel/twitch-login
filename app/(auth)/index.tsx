@@ -1,3 +1,4 @@
+import { colors } from '@/constants/theme';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
@@ -15,13 +16,12 @@ export default function index() {
           for you on <Text style={styles.boldText}>Twitch</Text>
         </Text>
       </View>
-      
       <View style={styles.buttonsContainer}>
         <Button variant="primary"
-        onPress={() => router.push('/(tabs)/home')}>
+          onPress={() => router.push('/(tabs)/home')}>
           Log in</Button>
         <Button variant="secondary"
-        onPress={() => router.push('/(tabs)/home')}>
+          onPress={() => router.push('/(tabs)/home')}>
           Sign Up</Button>
       </View>
     </View>
@@ -31,19 +31,19 @@ export default function index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9147FF',
+    backgroundColor: colors.background,
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 40,
   },
   iconContainer: {
-    top: 170,
+    top: 250,
     alignItems: 'center',
   },
   headerContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   title: {
     color: '#000',
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     marginBottom: 20,
+    gap: 30,
+    alignItems: 'center',
     justifyContent: 'center',
-    gap: 20,
   },
 });
