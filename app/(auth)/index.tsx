@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 32,
     fontWeight: 'bold',
-    textAlign: 'left',
+    textAlign: 'center',
   },
   boldText: {
-    color: '#5C16C5',
+    color: 'white',
     fontWeight: '900',
   },
   buttonsContainer: {
