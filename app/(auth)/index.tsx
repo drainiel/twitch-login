@@ -1,8 +1,10 @@
 import { colors } from '@/constants/theme';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from '../../components/button';
+
+// per le icone usiamo Ionicons che trovate a questo link: https://ionic.io/ionicons
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function index() {
   return (
@@ -18,6 +20,7 @@ export default function index() {
       </View>
       <View style={styles.buttonsContainer}>
         <Button variant="primary"
+          // Sui bottoni usiamo expo router per navigare tra le pagine 
           onPress={() => router.push('/(tabs)/home')}>
           Log in</Button>
         <Button variant="secondary"
@@ -28,6 +31,7 @@ export default function index() {
   );
 }
 
+// Definiamo gli stili nel file StyleSheet per una migliore leggibilità e manutenzione
 const styles = StyleSheet.create({
   container: {
     flex: 1,
